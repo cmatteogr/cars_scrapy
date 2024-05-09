@@ -22,7 +22,7 @@ def test_cars_basic_spyder():
 
 
 def test_cars_detailed_spyder():
-    configure_logging({'LOG_FORMAT': '%(levelname)s: %(message)s'})
+    configure_logging({'LOG_FORMAT': '%(levelname)s: %( )s'})
 
     settings_detailed = get_project_settings()
     settings_detailed.set('ITEM_PIPELINES', {'car_scrapy.pipelines.DetailedCarPipeline': 100})

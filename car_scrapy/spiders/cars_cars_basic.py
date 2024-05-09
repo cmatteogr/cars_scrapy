@@ -12,7 +12,7 @@ from car_scrapy.constants import CARS_REST_HEADER, CARS_SEARCH_URL
 class CarsCarsBasicSpider(scrapy.Spider):
     name = 'cars_cars_spider'
     offsets_n = 0
-    offsets_threshold = 2000
+    offsets_threshold = 300000
     page = 0
 
     def start_requests(self):
