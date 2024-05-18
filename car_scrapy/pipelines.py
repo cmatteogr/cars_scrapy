@@ -51,7 +51,7 @@ class DetailedCarPipeline:
                 inserted_document = self.m_uow.repo.insert_one_car(item['response'])
                 # Print the ID of the inserted document
                 print("Inserted document ID:", inserted_document.inserted_id)
-            case 'error':
+            case _:
                 line = json.dumps(item['url']) + "\n"
                 self.file.write(line)
 
