@@ -26,6 +26,7 @@ def test_cars_detailed_spyder():
 
     settings_detailed = get_project_settings()
     settings_detailed.set('ITEM_PIPELINES', {'car_scrapy.pipelines.DetailedCarPipeline': 100})
+    settings_detailed.set('DOWNLOAD_DELAY', 0.225)
     process = CrawlerProcess(settings_detailed)
     process.crawl(CarsCarsDetailsSpider)
     process.start()
