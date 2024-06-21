@@ -1,7 +1,7 @@
 """
 Test data extraction
 """
-from car_data_preparation.data_extraction import extract_car_model_data
+from car_data_extraction.data_extraction import extract_car_model_data
 import pytest
 
 from unit_of_work.unit_of_work import MongoDBUnitOfWork
