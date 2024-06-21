@@ -8,7 +8,7 @@ Cars Scrapy is a project build in Medellin Machine Learning - Study Group (MML-S
 * Install the libraries using requirements.txt
 * Setup MongoDB or the repository connection to have access to desired storage resource.
 
-# Usage
+## Usage
 Two scripts were developed to extract the data, they are located in the test folder:
 * test_cars_cars: Contains the test cases to extract basic an detailed cars data. Use test_cars_basic_spyder first to extract basic data and then test_cars_detailed_spyder to extract detailed data
 * test_data_extraction: Used to export data from repository (MongoDB) to a CSV file
