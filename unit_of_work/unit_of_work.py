@@ -1,5 +1,5 @@
 """
-* Author: Cesar M. Gonzalez R.
+Author: Cesar M. Gonzalez R.
 
 Units of Work
 """
@@ -12,6 +12,9 @@ import config
 
 
 class AbstractUnitOfWork(abc.ABC):
+    """
+    Abstract class that defines the interface for all units of work.
+    """
     repo: repository.AbstractRepository
 
     def __enter__(self) -> AbstractUnitOfWork:
@@ -30,6 +33,9 @@ class AbstractUnitOfWork(abc.ABC):
 
 
 class MongoDBUnitOfWork(AbstractUnitOfWork):
+    """
+    Class to define the MongoDB units of work.
+    """
     def __init__(self, as_instance=False):
         # If connection is initialized as instance then initialize the repository connection
         self.as_instance = as_instance

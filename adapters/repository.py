@@ -1,5 +1,5 @@
 """
-* Author: Cesar M. Gonzalez R
+Author: Cesar M. Gonzalez R
 
 Repository layer.
 Mongo DB Repository
@@ -12,10 +12,6 @@ class AbstractRepository(abc.ABC):
 
     @abc.abstractmethod
     def get_cars(self, query: str, query_filter: dict = None):
-        raise NotImplementedError
-
-    @abc.abstractmethod
-    def aggregate_cars(self, pipeline: str):
         raise NotImplementedError
 
     @abc.abstractmethod
@@ -34,11 +30,6 @@ class MongoDBRepository(AbstractRepository):
         if query_filter:
             return collection.find(query, query_filter)
         return collection.find(query)
-
-    def aggregate_cars(self, pipeline: str):
-        # Connect with collection and aggregate by input arguments
-        collection = self.session[MONGODB_FULLDATA_COLLECTION_NAME]
-        return collection.aggregate(pipeline)
 
     def insert_one_car(self, car_obj):
         # Insert car obj in db

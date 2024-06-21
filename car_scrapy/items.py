@@ -7,7 +7,6 @@ import scrapy
 
 
 class CarItem(scrapy.Item):
-    # Define the fields for your item here like:
     status = scrapy.Field()
     url = scrapy.Field()
     response = scrapy.Field()

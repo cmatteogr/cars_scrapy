@@ -10,30 +10,37 @@ from unit_of_work.unit_of_work import MongoDBUnitOfWork
 
 
 class CollectAllCarsPipeline:
+    """
+    Pipeline to collect all cars basic data from a web page.
+    """
+
     def __init__(self):
         self.items = []
 
     def open_spider(self, spider):
-        # Init JSONL file
+        # Init JSONL file to save basic cars data
         self.file = open("items.jsonl", "w")
 
     def close_spider(self, spider):
-        # Close File
+        # Close File.
         self.file.close()
 
     def process_item(self, item, spider):
-        # Write line with data extracted
+        # Write line with car data extracted
         line = json.dumps(item) + "\n"
         self.file.write(line)
         return item
 
 
 class DetailedCarPipeline:
+    """
+    Pipeline to collect all cars detailed data from a web page.
+    """
 
     def open_spider(self, spider):
         # Initialize MongoDB connection
         self.m_uow = MongoDBUnitOfWork(as_instance=True)
-        # Init failed file
+        # Init failed file to track cars when the extraction failed
         self.file = open("failed_items.jsonl", "w")
 
     def close_spider(self, spider):

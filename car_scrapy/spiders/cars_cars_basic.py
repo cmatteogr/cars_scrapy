@@ -10,19 +10,24 @@ from car_scrapy.constants import CARS_REST_HEADER, CARS_SEARCH_URL
 
 
 class CarsCarsBasicSpider(scrapy.Spider):
+    """
+    Spyder to extract Basic cars data
+    """
+    # Init spyder variables
     name = 'cars_cars_spider'
-    offsets_n = 0
-    offsets_threshold = 300000
-    page = 0
+    offsets_n = 0  # Offset used to limit the pagination when it doesn't end and always return values
+    offsets_threshold = 300000  # Offset threshold. Define the amount of data to extract if pagination doesn't end
+    page = 0  # Page counter
 
     def start_requests(self):
-        # Queue the request, include callback arguments locations_fr to count the offset
+        # Queue the request, Cars basic data
         yield scrapy.Request(CARS_SEARCH_URL.format(page=self.page), method='GET', body=None, headers=CARS_REST_HEADER)
 
     def parse(self, response):
-        # Find the script tag that includes 'itemListElement' in its JSON content
+        # Find the script tag which includes 'itemListElement' where is located the car data  in JSON format
         script = response.xpath('//script[contains(text(), "itemListElement")]/text()').get()
 
+        # If tag is found (cars data)
         if script:
             # Strip any leading/trailing whitespace that might affect json parsing
             cleaned_script = script.strip()
@@ -30,7 +35,7 @@ class CarsCarsBasicSpider(scrapy.Spider):
             cars_data = json.loads(cleaned_script)
             # Filter items 
             items_cars_data = cars_data['itemListElement']
-            # For each item yield the element
+            # For each item yield the element. Save them in the items.json file
             for item_cars_data in items_cars_data:
                 # Process or yield the data
                 yield item_cars_data
@@ -43,7 +48,8 @@ class CarsCarsBasicSpider(scrapy.Spider):
             else:
                 # Increase page, get data from following page
                 self.page += 1
-                yield scrapy.Request(CARS_SEARCH_URL.format(page=self.page), method='GET', body=None, headers=CARS_REST_HEADER)
+                yield scrapy.Request(CARS_SEARCH_URL.format(page=self.page), method='GET', body=None,
+                                     headers=CARS_REST_HEADER)
 
     def handle_error(self, failure, car_url):
         # Handle request failure

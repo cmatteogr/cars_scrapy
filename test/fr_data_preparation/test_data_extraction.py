@@ -14,7 +14,7 @@ def uow():
 
 def test_data_extraction(uow):
     query = {}
-    filepath = r'C:\Users\cesar_0qb0xal\Documents\GitHub\cars_scrapy\output\cars.csv'
+    filepath = r'cars.csv'
     properties_df = extract_car_model_data(uow, query)
     properties_df.to_csv(filepath)
 
