@@ -19,12 +19,11 @@ NEWSPIDER_MODULE = "car_scrapy.spiders"
 ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-#CONCURRENT_REQUESTS = 32
+# CONCURRENT_REQUESTS = 32
 
 # Retry
 RETRY_ENABLED = True
 RETRY_TIMES = 5  # Number of times to retry a request
-
 
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
@@ -68,7 +67,7 @@ RETRY_TIMES = 5  # Number of times to retry a request
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    #'car_scrapy.pipelines.CollectAllPipeline': 100,
+    # 'car_scrapy.pipelines.CollectAllPipeline': 100,
 }
 BATCH_SIZE = 100  # Process items in batches of 100
 

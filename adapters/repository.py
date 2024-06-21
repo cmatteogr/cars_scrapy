@@ -5,6 +5,7 @@ Repository layer.
 Mongo DB Repository
 """
 import abc
+
 from car_scrapy.constants import MONGODB_FULLDATA_COLLECTION_NAME
 
 
@@ -37,4 +38,3 @@ class MongoDBRepository(AbstractRepository):
         if not car_obj:
             raise Exception("Cars Obj is empty, review the input argument")
         return collection.insert_one(car_obj)
-

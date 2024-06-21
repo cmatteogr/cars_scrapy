@@ -10,4 +10,3 @@ class CarItem(scrapy.Item):
     status = scrapy.Field()
     url = scrapy.Field()
     response = scrapy.Field()
-

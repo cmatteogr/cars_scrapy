@@ -3,10 +3,10 @@ Author: Cesar M. Gonzalez R.
 
 Car scrapy Details data
 """
-import scrapy
 import json
-from unidecode import unidecode
 from functools import partial
+
+import scrapy
 
 from car_scrapy.constants import CARS_REST_HEADER2
 from car_scrapy.items import CarItem
@@ -32,7 +32,7 @@ class CarsCarsDetailsSpider(scrapy.Spider):
     def parse(self, response, car_url):
         # Use the xpath selector to find the script tag and extract its contents
         car_json_data = response.xpath('//script[@id="initial-activity-data"]/text()').get()
-        
+
         # Create the Car Item
         car_item = CarItem()
         car_item['status'] = 'ok'

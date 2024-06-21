@@ -5,10 +5,13 @@ Units of Work
 """
 
 from __future__ import annotations
+
 import abc
-from adapters import repository
+
 import pymongo
+
 import config
+from adapters import repository
 
 
 class AbstractUnitOfWork(abc.ABC):
@@ -36,6 +39,7 @@ class MongoDBUnitOfWork(AbstractUnitOfWork):
     """
     Class to define the MongoDB units of work.
     """
+
     def __init__(self, as_instance=False):
         # If connection is initialized as instance then initialize the repository connection
         self.as_instance = as_instance

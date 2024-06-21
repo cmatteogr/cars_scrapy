@@ -4,10 +4,9 @@ Test Cars Spiders
 
 from scrapy.crawler import CrawlerProcess
 from scrapy.utils.log import configure_logging
-
-from car_scrapy.spiders.cars_cars_basic import CarsCarsBasicSpider
 from scrapy.utils.project import get_project_settings
 
+from car_scrapy.spiders.cars_cars_basic import CarsCarsBasicSpider
 from car_scrapy.spiders.cars_cars_details import CarsCarsDetailsSpider
 
 
