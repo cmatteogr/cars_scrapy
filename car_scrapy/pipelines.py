@@ -63,4 +63,4 @@ class DetailedCarPipeline:
                 line = json.dumps(item['url']) + "\n"
                 self.file.write(line)
 
-        return item
+        # return item
