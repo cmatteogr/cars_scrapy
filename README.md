@@ -3,7 +3,7 @@
 
 Cars Scrapy is a project build in Medellin Machine Learning - Study Group (MML-SG) used as template to extract data from internet. This project extracts data from a cars portal but it can be extended to any other "conventional" web portal
 
-## Requirements
+## Prerequisites
 * Install Python 3.10 or higher.
 * Install the libraries using requirements.txt.
 * Setup MongoDB or the repository connection to have access to desired storage resource.
