@@ -1,6 +1,5 @@
 """
 Author: Cesar M. Gonzalez R
-
 Repository layer.
 Mongo DB Repository
 """

@@ -1,13 +1,10 @@
 """
 Author: Cesar M. Gonzalez R.
-
 Car scrapy Basic data
 """
 
 import json
-
 import scrapy
-
 from car_scrapy.constants import CARS_REST_HEADER, CARS_SEARCH_URL
 
 

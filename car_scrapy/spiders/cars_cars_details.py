@@ -1,13 +1,10 @@
 """
 Author: Cesar M. Gonzalez R.
-
 Car scrapy Details data
 """
 import json
 from functools import partial
-
 import scrapy
-
 from car_scrapy.constants import CARS_REST_HEADER2
 from car_scrapy.items import CarItem
 

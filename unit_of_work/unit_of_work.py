@@ -1,15 +1,11 @@
 """
 Author: Cesar M. Gonzalez R.
-
 Units of Work
 """
 
 from __future__ import annotations
-
 import abc
-
 import pymongo
-
 import config
 from adapters import repository
 

@@ -1,6 +1,5 @@
 """
 Author: Cesar M. Gonzalez
-
 Data extraction from repository
 """
 

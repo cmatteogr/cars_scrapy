@@ -6,6 +6,9 @@ Cars Scrapy is a project build in Medellin Machine Learning - Study Group (MML-S
 ## Prerequisites
 * Install Python 3.10 or higher.
 * Install the libraries using requirements.txt.
+```bash
+pip install -r requirements.txt
+```
 * Setup MongoDB or the repository connection to have access to desired storage resource.
 
 ## Usage
